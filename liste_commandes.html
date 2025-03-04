@@ -1,0 +1,20 @@
+{% extends "Shope_Manage/base.html" %}
+{% block content %}
+<h2>Liste des Commandes</h2>
+<table border="1">
+    <tr>
+        <th>ID Commande</th>
+        <th>Client</th>
+        <th>Date</th>
+        <th>Total (€)</th>
+    </tr>
+    {% for commande in commandes %}
+    <tr>
+        <td>{{ commande.id }}</td>
+        <td>{{ commande.client.nom }}</td>
+        <td>{{ commande.date_commande }}</td>
+        <td>{{ commande.total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
